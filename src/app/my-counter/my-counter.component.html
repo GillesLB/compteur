@@ -1,13 +1,13 @@
-<button (click)="increment()">Increment</button>
+<button class="margin-right" (click)="increment()">Incrementer</button>
 
-<button (click)="decrement()">Decrement</button>
+<button class="margin-right" (click)="decrement()">Decrementer</button>
 
-<button (click)="reset()">Reset</button>
+<button class="margin-right" (click)="color()">Couleur</button>
 
-<button (click)="color()">Color</button>
+<button class="margin-right" (click)="afficher()">Afficher</button>
 
-<button (click)="afficher()">Afficher</button>
+<button class=" margin-left margin-bottom fond" (click)="reset()">Effacer</button>
 
-<div class={{class}}>Current Count: {{ count$ | async }}</div>
+<div class={{class}}><span class="gras">Etat actuel dans le store : </span>{{ count$ | async }}</div>
 <br />
 <img class={{cacher}} src="assets/images/victory.png" />

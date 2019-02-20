@@ -4,17 +4,20 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
-import { counterReducer } from './counter.reducer';
+import { citationReducer } from 'src/app/reducers/citation.reducer';
+import { counterReducer } from 'src/app/reducers/counter.reducer';
 import { MyCounterComponent } from './my-counter/my-counter.component';
+import { CitationComponent } from './citation/citation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyCounterComponent
+    MyCounterComponent,
+    CitationComponent
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({count: counterReducer})
+    StoreModule.forRoot({citation: citationReducer, count: counterReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]

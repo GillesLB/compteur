@@ -2,6 +2,30 @@
     color: red;
 }
 
+.fond {
+    background-color: cyan;
+}
+
 .cacher {
     display: none;
+}
+
+.margin-right {
+    margin-right: 20px;
+}
+
+.margin-left {
+    margin-left: 20px;
+}
+
+.margin-bottom {
+    margin-bottom: 20px;
+}
+
+.bas {
+    display: flex;
+}
+
+.gras {
+    font-weight: bold;
 }

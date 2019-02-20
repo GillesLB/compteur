@@ -1,0 +1,27 @@
+.color {
+    color: red;
+}
+
+.fond {
+    background-color: rgb(193, 212, 80);
+}
+
+.cacher {
+    display: none;
+}
+
+.margin-right {
+    margin-right: 20px;
+}
+
+.margin-left {
+    margin-left: 20px;
+}
+
+.margin-bottom {
+    margin-bottom: 20px;
+}
+
+.gras {
+    font-weight: bold;
+}
