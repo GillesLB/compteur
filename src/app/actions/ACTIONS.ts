@@ -1,19 +1,25 @@
 export const ACTIONS = {
     COMPTEUR: {
-        INCREMENTER: '[Counter Component] INCREMENTER',
-        DECREMENTER: '[Counter Component] DECREMENTER',
-        EFFACER: '[Counter Component] EFFACER',
-        COULEUR: '[Counter Component] COULEUR',
-        AFFICHER: '[Counter Component] AFFICHER'
+        INCREMENTER: 'ACTION_COMPTEUR_INCREMENTER',
+        DECREMENTER: 'ACTION_COMPTEUR_DECREMENTER',
+        EFFACER: 'ACTION_COMPTEUR_EFFACER',
+        COULEUR: 'ACTION_COMPTEUR_COULEUR',
+        AFFICHER: 'ACTION_COMPTEUR_AFFICHER'
     },
     CITATION: {
-        PLATON: '[Citation Component] PLATON',
-        JUNG: '[Citation Component] JUNG',
-        SPINOZA: '[Citation Component] SPINOZA',
+        PLATON: 'CITATION_PLATON',
+        JUNG: 'CITATION_JUNG',
+        SPINOZA: 'CITATION_SPINOZA',
         ALEATOIRE: {
-            DALAI_LAMA: '[Citation Component] DALAI_LAMA',
-            GANDHI: '[Citation Component] GANDHI',
-            COLUCHE: '[Citation Component] COLUCHE'
-        }
+            DALAI_LAMA: 'CITATION_ALEATOIRE_DALAI_LAMA',
+            GANDHI: 'CITATION_ALEATOIRE_GANDHI',
+            COLUCHE: 'CITATION_ALEATOIRE_COLUCHE'
+        },
+        EFFACER: 'CITATION_EFFACER'
+    },
+    RESTAURANT: {
+        ADD: 'RESTAURANT_ADD',
+        JOYEUX_SERIAL_KILLER: 'RESTAURANT_JOYEUX_SERIAL_KILLER',
+        EFFACER: 'RESTAURANT_EFFACER'
     }
-}
+};

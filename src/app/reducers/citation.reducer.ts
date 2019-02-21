@@ -18,6 +18,8 @@ export function citationReducer(state = initialState, action: Action) {
             return state = 'La vie est un mystère qu\'il faut vivre, et non un problème à résoudre. (Gandhi)';
         case ACTIONS.CITATION.ALEATOIRE.COLUCHE:
             return state = 'Je suis capable du meilleur et du pire. Mais, dans le pire, c\'est moi le meilleur. (Coluche)';
+        case ACTIONS.CITATION.EFFACER:
+            return state = initialState;
         default:
             return state;
     }

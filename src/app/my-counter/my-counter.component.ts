@@ -4,6 +4,7 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { Increment, Decrement, Reset, Color, Afficher } from '../actions/counter.actions';
+import { Effacer } from '../actions/restaurant.actions';
 
 @Component({
   selector: 'app-my-counter',

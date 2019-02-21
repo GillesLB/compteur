@@ -3,8 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { Platon, Jung, Spinoza, Dalai_Lama, Gandhi, Coluche } from '../actions/citation.actions';
-import { V } from '@angular/core/src/render3';
+import { Platon, Jung, Spinoza, DalaiLama, Gandhi, Coluche, Effacer } from '../actions/citation.actions';
 
 @Component({
   selector: 'app-citation',
@@ -21,7 +20,7 @@ export class CitationComponent implements OnInit {
   }
 
   platon() {
-      this.store.dispatch(new Platon());
+    this.store.dispatch(new Platon());
   }
 
   jung() {
@@ -42,12 +41,16 @@ export class CitationComponent implements OnInit {
     console.log(this.choix);
     switch (this.choix) {
       case (0):
-        return this.store.dispatch(new Dalai_Lama());
+        return this.store.dispatch(new DalaiLama());
       case (1):
         return this.store.dispatch(new Gandhi());
       default:
-        return this.store.dispatch(new Coluche())
+        return this.store.dispatch(new Coluche());
     }
+  }
+
+  effacer() {
+    this.store.dispatch(new Effacer());
   }
 
   ngOnInit() {

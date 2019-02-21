@@ -14,7 +14,7 @@ export class Spinoza implements Action {
     readonly type = ACTIONS.CITATION.SPINOZA;
 }
 
-export class Dalai_Lama implements Action {
+export class DalaiLama implements Action {
     readonly type = ACTIONS.CITATION.ALEATOIRE.DALAI_LAMA;
 }
 
@@ -24,4 +24,8 @@ export class Gandhi implements Action {
 
 export class Coluche implements Action {
     readonly type = ACTIONS.CITATION.ALEATOIRE.COLUCHE;
+}
+
+export class Effacer implements Action {
+    readonly type = ACTIONS.CITATION.EFFACER;
 }

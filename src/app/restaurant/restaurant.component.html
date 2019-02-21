@@ -1,0 +1,19 @@
+<button class="margin-right" (click)="addRestaurant()">Liste des restaurants</button>
+
+<button class="margin-right margin-bottom fond" (click)="effacer()">Effacer la liste</button>
+
+<div *ngIf="(restaurant$ | async | json) !== initialState">
+  <span class="gras">Voici : </span>
+  Nom : {{ (restaurant$ | async).nom }} | Note : {{ (restaurant$ | async).note }} / 5
+</div>
+<div *ngIf="(restaurant$ | async | json) === initialstate" class={{class}}>
+  <span class="gras">Voici : </span>
+  <span class="italique">cliquez pour voir la liste des restaurants</span>
+</div>
+
+<div>
+  <h1>ICI : </h1>
+  <ul>
+    <li *ngFor="let restaurant of (restaurant$ | async)">{{ restaurant }}</li>
+  </ul>
+</div>
