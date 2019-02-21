@@ -13,3 +13,7 @@ export class JoyeuxSerialKiller implements Action {
 export class Effacer implements Action {
     readonly type = ACTIONS.RESTAURANT.EFFACER;
 }
+
+export class MontrerListe implements Action {
+    readonly type = ACTIONS.RESTAURANT.MONTRER_LISTE;
+}

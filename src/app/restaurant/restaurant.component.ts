@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { ADD, JoyeuxSerialKiller, Effacer } from 'src/app/actions/restaurant.actions';
+import { ADD, Effacer, MontrerListe } from 'src/app/actions/restaurant.actions';
 import { initialState } from 'src/app/reducers/restaurant.reducer';
 
 @Component({
@@ -26,6 +26,10 @@ export class RestaurantComponent implements OnInit {
 
   effacer() {
     this.store.dispatch(new Effacer());
+  }
+
+  montrerListe() {
+    this.store.dispatch(new MontrerListe());
   }
 
   ngOnInit() {

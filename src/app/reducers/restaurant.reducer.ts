@@ -17,6 +17,11 @@ export function restaurantReducer(state = initialState, action: Action) {
                 // et ajout de' "3ème restaurant" dans le tableau
                 data : [...state.data, '3eme restaurant']
             };
+        case ACTIONS.RESTAURANT.MONTRER_LISTE:
+            return {
+                ...state,
+                data: restaurants
+            };
         default:
             return state;
     }

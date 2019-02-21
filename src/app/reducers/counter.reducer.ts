@@ -2,20 +2,30 @@ import { Action } from '@ngrx/store';
 
 import { ACTIONS } from 'src/app/actions/ACTIONS';
 
-export const initialState = 0;
+export const initialState = {
+    data: 0,
+    color: '',
+    afficher: 'cacher'
+};
 
 export function counterReducer(state = initialState, action: Action) {
     switch (action.type) {
         case ACTIONS.COMPTEUR.INCREMENTER:
-            return state + 1;
+            return {
+                ...state,
+                data: [...state.data, state.data += 1]
+            };
         case ACTIONS.COMPTEUR.DECREMENTER:
-            return state - 1;
+        return {
+            ...state,
+            data: 1
+        };
         case ACTIONS.COMPTEUR.EFFACER:
-            return state = 0;
+            return state.data = initialState.data;
         case ACTIONS.COMPTEUR.COULEUR:
-            return state = 999;
+            return state.color = 'rouge';
         case ACTIONS.COMPTEUR.AFFICHER:
-            return state = 108;
+            return state.afficher = '';
         default:
             return state;
     }

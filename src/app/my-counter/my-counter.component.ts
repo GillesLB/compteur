@@ -13,12 +13,17 @@ import { Effacer } from '../actions/restaurant.actions';
 })
 export class MyCounterComponent implements OnInit {
 
-  class: string;
-  cacher = 'cacher';
   count$: Observable<number>;
+  color$: Observable<string>;
+  cacher$: Observable<string>;
 
-  constructor(private store: Store<{ count: number }>) {
+
+  constructor(
+    private store: Store<{ count: number }>,
+    private color: Store<{ color: string }>,
+    ) {
     this.count$ = store.pipe(select('count'));
+    this.color$ = store.pipe(select('color'));
   }
 
   increment() {
@@ -31,19 +36,14 @@ export class MyCounterComponent implements OnInit {
 
   reset() {
     this.store.dispatch(new Reset());
-    this.class = '';
-    this.cacher = 'cacher';
-    this.class = '';
   }
 
-  color() {
+  couleur() {
     this.store.dispatch(new Color());
-    this.class = 'color';
   }
 
   afficher() {
     this.store.dispatch(new Afficher());
-    this.cacher = '';
   }
 
   ngOnInit() {
