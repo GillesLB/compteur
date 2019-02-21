@@ -33,6 +33,7 @@ export class RestaurantComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('i : ', initialState);
   }
 
 }

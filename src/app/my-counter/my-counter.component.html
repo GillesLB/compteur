@@ -6,8 +6,8 @@
 
 <button class="margin-right" (click)="afficher()">Afficher</button>
 
-<button class=" margin-left margin-bottom fond" (click)="reset()">Effacer</button>
+<button class="margin-left margin-bottom fond" (click)="reset()">Effacer</button>
 
-<div class={{color}}><span class="gras">Etat actuel dans le store : </span>{{ count$ | async }}</div>
+<div class='{{(count$|async).color}}'><span class="gras">Etat actuel dans le store : </span>{{(count$ | async).data}}</div>
 <br />
-<img class={{cacher}} src="assets/images/victory.png" />
+<img class='{{(count$|async).afficher}}' src="assets/images/victory.png" />

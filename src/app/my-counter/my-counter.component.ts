@@ -4,7 +4,6 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { Increment, Decrement, Reset, Color, Afficher } from '../actions/counter.actions';
-import { Effacer } from '../actions/restaurant.actions';
 
 @Component({
   selector: 'app-my-counter',
@@ -13,17 +12,12 @@ import { Effacer } from '../actions/restaurant.actions';
 })
 export class MyCounterComponent implements OnInit {
 
-  count$: Observable<number>;
-  color$: Observable<string>;
-  cacher$: Observable<string>;
-
+  count$: Observable<any>;
 
   constructor(
-    private store: Store<{ count: number }>,
-    private color: Store<{ color: string }>,
+    private store: Store<{ count: any }>,
     ) {
     this.count$ = store.pipe(select('count'));
-    this.color$ = store.pipe(select('color'));
   }
 
   increment() {
@@ -47,6 +41,7 @@ export class MyCounterComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('S : ', this.store)
   }
 
 }

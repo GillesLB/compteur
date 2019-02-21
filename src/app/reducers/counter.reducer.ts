@@ -13,19 +13,30 @@ export function counterReducer(state = initialState, action: Action) {
         case ACTIONS.COMPTEUR.INCREMENTER:
             return {
                 ...state,
-                data: [...state.data, state.data += 1]
+                data: state.data += 1
             };
         case ACTIONS.COMPTEUR.DECREMENTER:
-        return {
-            ...state,
-            data: 1
-        };
+            return {
+                ...state,
+                data: state.data -= 1
+            };
         case ACTIONS.COMPTEUR.EFFACER:
-            return state.data = initialState.data;
+            return {
+                ...state,
+                data: state.data = 0,
+                color: state.color = '',
+                afficher: state.afficher = 'cacher'
+            }
         case ACTIONS.COMPTEUR.COULEUR:
-            return state.color = 'rouge';
+            return {
+            ...state,
+            color: state.color = 'rouge'
+            };
         case ACTIONS.COMPTEUR.AFFICHER:
-            return state.afficher = '';
+            return {
+            ...state,
+            afficher: state.afficher = ''
+            };
         default:
             return state;
     }

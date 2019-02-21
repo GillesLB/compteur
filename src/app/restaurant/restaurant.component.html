@@ -8,14 +8,14 @@
   <span class="gras">Voici : </span>
   Nom : {{ (restaurant$ | async).nom }} | Note : {{ (restaurant$ | async).note }} / 5
 </div>
-<div *ngIf="(restaurant$ | async) === initialstate" class={{class}}>
+<div *ngIf="(restaurant$ | async) === initialState">
   <span class="gras">Voici : </span>
   <span class="italique">cliquez pour voir la liste des restaurants</span>
 </div>
 
-<div>
+<!-- <div>
   <h1>ICI : </h1>
   <ul>
-    <li *ngFor="let restaurant of (restaurant$ | async | json)">{{ restaurant }}</li>
+    <li *ngFor="let restaurant of (restaurant$ | async)">{{ restaurant }}</li>
   </ul>
-</div>
+</div> -->

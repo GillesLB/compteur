@@ -8,4 +8,4 @@
 
 <button class="margin-right margin-bottom margin-left fond" (click)="effacer()">Effacer</button>
 
-<div class={{class}}><span class="gras">Citation : </span>{{ citation$ | async }}</div>
+<div><span class="gras">Citation : </span>{{(citation$ | async).citation}}</div>
