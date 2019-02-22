@@ -2,13 +2,19 @@ import { Action } from '@ngrx/store';
 
 import { ACTIONS } from 'src/app/actions/ACTIONS';
 
-export const initialState = {
+export interface State {
+    data: number;
+    color: string;
+    afficher: string;
+}
+
+export const initialState: State = {
     data: 0,
     color: '',
     afficher: 'cacher'
 };
 
-export function counterReducer(state = initialState, action: Action) {
+export function counterReducer(state = initialState, action: Action): State {
     switch (action.type) {
         case ACTIONS.COMPTEUR.INCREMENTER:
             return {
@@ -26,7 +32,7 @@ export function counterReducer(state = initialState, action: Action) {
                 data: state.data = 0,
                 color: state.color = '',
                 afficher: state.afficher = 'cacher'
-            }
+            };
         case ACTIONS.COMPTEUR.COULEUR:
             return {
             ...state,

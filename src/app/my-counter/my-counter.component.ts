@@ -41,7 +41,6 @@ export class MyCounterComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('S : ', this.store)
   }
 
 }

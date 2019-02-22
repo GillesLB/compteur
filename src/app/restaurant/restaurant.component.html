@@ -1,21 +1,62 @@
-<button class="margin-right" (click)="montrerListe()">Voir le liste des restaurants</button>
+<button class="margin-right" (click)="montrerListe()">Voir tous les restaurants</button>
 
 <button class="margin-right" (click)="addRestaurant()">Ajouter un restaurant</button>
 
+<button class="margin-right" (click)="top()">Afficher les top (note > 3)</button>
+
+<button class="margin-right" (click)="vide()">Afficher si un champ vide</button>
+
 <button class="margin-right margin-bottom fond" (click)="effacer()">Effacer la liste</button>
 
-<div *ngIf="(restaurant$ | async) !== initialState">
-  <span class="gras">Voici : </span>
-  Nom : {{ (restaurant$ | async).nom }} | Note : {{ (restaurant$ | async).note }} / 5
-</div>
 <div *ngIf="(restaurant$ | async) === initialState">
-  <span class="gras">Voici : </span>
   <span class="italique">cliquez pour voir la liste des restaurants</span>
 </div>
 
-<!-- <div>
-  <h1>ICI : </h1>
-  <ul>
-    <li *ngFor="let restaurant of (restaurant$ | async)">{{ restaurant }}</li>
-  </ul>
-</div> -->
+<div *ngIf="(restaurant$ | async) !== initialState">
+  <div class="titre">Liste des restaurants :</div>
+  <div>
+      <table class="largeur-tableau">
+    
+        <thead class="centrer-texte">
+          <tr>
+            <th>Nom</th>
+            <th>Adresse</th>
+            <th>Visité le</th>
+            <th>Note</th>
+            <th>Nb visites</th>
+            <th>Nb comm.</th>
+            <th>Détail</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <ng-container *ngFor="let restaurant of (restaurant$ | async).data">
+            <tr>
+              <td class="texte-en-gras largeur-colonne-nom">{{restaurant.nom}}</td>
+              <td class="largeur-colonne-adresse">{{restaurant.adresse}}</td> 
+              <td class="centrer-texte">{{restaurant.dateDerniereVisite}}</td>
+              <td *ngIf="restaurant.note" class="centrer-texte largeur-colonne-note">{{restaurant.note}} / 5</td>
+              <td *ngIf="!restaurant.note" class="centrer-texte largeur-colonne-note">-</td>
+              <td class="centrer-texte">{{restaurant.nombreVisite}}</td>
+              <td *ngIf="restaurant.nombreCommentaire" class="centrer-texte largeur-colonne-note">{{restaurant.nombreCommentaire}}</td>
+              <td *ngIf="!restaurant.nombreCommentaire" class="centrer-texte largeur-colonne-note">-</td>
+              <td class="centrer-texte">
+                <p>...</p>
+                <!-- <a [routerLink]="['/liste', restaurantVisible.restaurantId]"><app-bouton></app-bouton></a> -->
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      
+      </table>
+    
+      <!-- <nav aria-label="Pagination liste restaurants" class="centrer-pagination">
+        <ul *ngIf="nombreRestaurantTotal > 5" class="pagination">
+          <li class="page-item bouton-pagination"><a class="page-link pointeur" [ngClass]="{'cache': pageEnCours === 1}" (click)="pagePrecedente()"><<  Précédent</a></li>
+          
+          <li class="page-item bouton-pagination"><a class="page-link pointeur" [ngClass]="{'cache': pageEnCours === pageMax}" (click)="pageSuivante()">Suivant  >></a></li>
+        </ul>
+      </nav> -->
+    
+    </div>
+</div>
